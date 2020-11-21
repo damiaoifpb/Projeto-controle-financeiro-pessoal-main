@@ -1,0 +1,359 @@
+<!DOCTYPE>
+	<HTML>
+		<head>
+			<title>Controle Financeiro Pessoal</title>
+			<meta charset="utf-8">
+		    </script><title>Controle Financeiro Pessoal</title><link rel="shortcut icon" href="css/imagens/Icon.png" />
+		    <link rel="stylesheet" type="text/css"  href="css/style.css" />
+			<script src="js/javascript.js"></script>
+     		  
+		</head>
+		<body>
+			                                
+			<div id="cssmenu">	                                     
+				<ul>                                                     
+					<li>
+					    <a href="javascript:displayMudar();"><span>Inicio</span></a>                         
+					</li>						                                                     
+					<li>
+					    <a><span>Renda Mensal</span></a>                         
+					</li>						                                                     
+					<li>
+					    <a><span>Gastos</span></a>                         
+					</li>						                                                                              
+					<li>
+					    <a ><span>Relatorio</span></a>                         
+					</li>
+						                                    
+				</ul>
+					                                                	                               
+			</div><!--MENU--> 
+
+			<div class="container">
+				<div id="divinicio" >
+					<div class="mesInicio"  >
+						<p id="mesAtual"></p>
+						<script style="color:red;">	
+
+                          function muda(meses){
+                                            document.getElementById(meses).style.color="red";
+                                          }
+
+
+							var meses = [
+								  "Janeiro",
+								  "Fevereiro",
+								  "Março",
+								  "Abril",
+								  "Maio",
+								  "Junho",
+								  "Julho",
+								  "Agosto",
+								  "Setembro",
+								  "Outubro",
+								  "Novembro",
+								  "Dezembro"
+								];
+
+							
+ 
+								
+							function getMesAtual(){
+							    document.getElementById('mesAtual').innerHTML = 'Mês: ' + meses[new Date().getMonth()];
+							   
+							}
+
+							getMesAtual();
+
+							
+						</script>
+					</div>
+					<div class="cabecario">
+						<h1>Saldo Mensal Disponivel</h1>
+						<hr>
+						<h2> R$ <samp class="smd">0,00</samp></h2> </br>
+						<hr>
+						<hr>
+
+						<center><table  width=450  height=50>
+							
+							
+
+							<tr>
+
+
+                             <td   >Receita </td>
+                           
+                             <td   >Gastos </td>
+
+                              
+                          </tr>
+                           <tr>
+                           	
+                            <td   >+R$ <samp class="crend">0,00</samp> </td>
+                            <td  >-R$  <samp class="cgast">0,00</samp></td>
+                            
+                          </tr>
+						</table></center>
+					</div>
+				</div>
+				
+				<div class="rendas">
+					<div class="cabecario">
+						<h1>Rendas</h1>
+						<hr>
+					</div>
+
+					<div>
+					  	<button id="addrenda" class="btn btn-primary">Adicionar</button>
+					  	<button id="editrenda" class="btn btn-primary">Editar</button>
+						<button id="delrenda" class="btn btn-secondary" >Excluir</button>
+					</div>
+					<table id="rendafx" class="tabela" border="2" width="300">
+					    <tr>
+					      <th colspan="3">Rendas Fixas R$</th>
+					    </tr>
+					    <tr>
+					      <th>ID</th>
+					      <th>Descrição</th>
+					      <th>Valor</th>
+					    </tr>
+					</table>
+
+					<table id="rendavar" class="tabela" border="2" width="300">
+					    <tr>
+					      <th colspan="3">Rendas Variáveis R$</th>
+					    </tr>
+					    <tr>
+					      <th>ID</th>
+					      <th>Descrição</th>
+					      <th>Valor</th>
+					    </tr>
+					</table>	
+				</div><!--Rendas-->
+
+				<div id="gasto" class="gastos">
+					<div class="cabecario">
+						<h1>Gastos</h1>
+						<hr>
+					</div>
+
+					<div>
+					  	<button id="addgasto" class="btn btn-primary">Adicionar</button>
+					  	<button id="editgasto" class="btn btn-primary">Editar</button>
+						<button id="delgasto"class="btn btn-secondary" >Excluir</button>
+					</div>
+					<table id="gastofx" class="tabela" border="2" width="300">
+					    <tr>
+					      <th colspan="5">Gastos Fixos R$</th>
+					    </tr>
+					    <tr>
+					      <th>ID</th>
+					      <th>Descrição</th>
+					      <th>Forma de Pagamento</th>
+					      <th>Parcelas</th>
+					      <th>Valor</th>
+					    </tr>
+					</table>
+
+					<table id="gastovar" class="tabela" border="2" width="300">
+					    <tr>
+					      <th colspan="5">Gastos Variáveis R$</th>
+					    </tr>
+					    <tr>
+					      <th>ID</th>
+					      <th>Descrição</th>
+					      <th>Forma de Pagamento</th>
+					      <th>Parcelas</th>
+					      <th>Valor</th>
+					    </tr>
+					</table>
+				</div><!--gastos-->
+
+				<div class="relatorio">
+					<div class="cabecario ">
+						<h1>Relátorio</h1>
+						<hr>
+					</div>
+					<div class="tabelafixas">
+						<table id="rendafx" class="tabela" border="2" width="300">
+						    <tr>
+						      <th colspan="3">Rendas Fixas R$</th>
+						    </tr>
+						    <tr>
+						      <th>ID</th>
+						      <th>Descrição</th>
+						      <th>Valor</th>
+						    </tr>
+						</table>
+						<table id="gastofx" class="tabela" border="2" width="300">
+						    <tr>
+						      <th colspan="5">Gastos Fixos R$</th>
+						    </tr>
+						    <tr>
+						      <th>ID</th>
+						      <th>Descrição</th>
+						      <th>Forma de Pagamento</th>
+						      <th>Parcelas</th>
+						      <th>Valor</th>
+						    </tr>
+						</table>
+
+					</div>
+					<div class="tabelavariaveis">
+						<table id="rendavar" class="tabela" border="2" width="300">
+						    <tr>
+						      <th colspan="3">Rendas Variáveis R$</th>
+						    </tr>
+						    <tr>
+						      <th>ID</th>
+						      <th>Descrição</th>
+						      <th>Valor</th>
+						    </tr>
+						</table>
+
+						<table id="gastovar" class="tabela" border="2" width="300">
+						    <tr>
+						      <th colspan="5">Gastos Variáveis R$</th>
+						    </tr>
+						    <tr>
+						      <th>ID</th>
+						      <th>Descrição</th>
+						      <th>Forma de Pagamento</th>
+						      <th>Parcelas</th>
+						      <th>Valor</th>
+						    </tr>
+						</table>
+					</div>
+				</div><!--relatorio-->
+
+				<div class="addrendas">
+					
+					<div class="cabecario bordcabecario">
+						<h1>Adicionar Gastos</h1>
+					</div>
+					<form class="form">
+						
+						<input type="text" placeholder="Descrição">
+						<input type="number" placeholder="Valor">
+						<div class="checkbox">
+						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						</div>
+						<div>
+					  		<button class="btn btn-primary">Adicionar</button>
+							<button class="btn btn-secondary" >Cancelar</button>
+						</div>
+					</form>
+						
+				</div><!--addrendas-->
+
+				<div class="editrendas">
+					<div class="cabecario bordcabecario">
+						<h1>Editar Renda</h1>
+						
+					</div>
+
+					<form class="form">
+						<input type="number" placeholder="ID">
+						<input type="text" placeholder="Descrição">
+						<input type="number" placeholder="Valor">
+						<div class="checkbox">
+						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						</div>
+						
+						<div>
+					  		<button class="btn btn-primary">Editar</button>
+							<button class="btn btn-secondary" >Cancelar</button>
+						</div>
+					</form>
+				</div><!--editrendas-->
+
+				<div class="excluirrendas">
+					
+					<div class="cabecario bordcabecario" >
+						<h1>Excluir Renda<iv/h1>
+					</div>
+
+					<form class="form">
+						<input type="number" placeholder="ID">
+						<div class="checkbox">
+						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						</div>
+						
+						<div>
+					  		<button class="btn btn-primary">Cancelar</button>
+							<button class="btn btn-secondary" >Excluir</button>
+						</div>
+					</form>
+				</div><!--excluirrendas-->
+
+				<div class="addgastos">
+					
+					<div class="cabecario bordcabecario">
+						<h1>Adicionar Gasto</h1>
+					</div>
+					<form class="form">
+						
+						<input type="text" placeholder="Descrição">
+						<input type="number" placeholder="Valor">
+						<input type="number" placeholder="Parcelas">
+						<div class="checkbox">
+						<input type="radio" name="fm" value="av"/><p class="formpag">Avista</p><input type="radio" name="fm" value="ac"/><p class="formpag">Cartão</p>
+						</div>
+						<div class="checkbox">
+						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						</div>
+						<div>
+					  		<button class="btn btn-primary">Adicionar</button>
+							<button class="btn btn-secondary" >Cancelar</button>
+						</div>
+					</form>
+						
+				</div><!--addgastos-->
+				
+				<div class="editgastos">
+					<div class="cabecario bordcabecario">
+						<h1>Editar Gasto</h1>
+						
+					</div>
+
+					<form class="form">
+						<input type="number" placeholder="ID">
+						<input type="text" placeholder="Descrição">
+						<input type="number" placeholder="Valor">
+						<input type="number" placeholder="Parcelas">
+						<div class="checkbox">
+						<input type="radio" name="fm" value="av"/><p class="formpag">Avista</p><input type="radio" name="fm" value="ac"/><p class="formpag">Cartão</p>
+						</div>
+						<div class="checkbox">
+						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						</div>
+						<div>
+					  		<button class="btn btn-primary">Editar</button>
+							<button class="btn btn-secondary" >Cancelar</button>
+						</div>
+					</form>
+				</div><!--editgastos-->
+
+				<div class="excluirgastos">
+					
+					<div class="cabecario bordcabecario">
+						<h1>Excluir Gasto<iv/h1>
+					</div>
+					<div class="checkbox">
+						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+					</div>
+
+					<form class="form">
+						<input type="number" placeholder="ID">
+						
+						<div>
+					  		<button class="btn btn-primary">Cancelar</button>
+							<button class="btn btn-secondary" >Excluir</button>
+						</div>
+					</form>
+				</div><!--excluirgastos-->
+
+			</div><!--Container-->
+		</body>
+	</HTML>
