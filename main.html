@@ -5,7 +5,8 @@
 			<meta charset="utf-8">
 		    </script><title>Controle Financeiro Pessoal</title><link rel="shortcut icon" href="css/imagens/Icon.png" />
 		    <link rel="stylesheet" type="text/css"  href="css/style.css" />
-			<script src="js/javascript.js"></script>
+			<script src="js/javascript.js"></script> <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+			 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
      		  
 		</head>
 		<body>
@@ -13,16 +14,16 @@
 			<div id="cssmenu">	                                     
 				<ul>                                                     
 					<li>
-					    <a href="javascript:displayMudar();"><span>Inicio</span></a>                         
+					    <a href="javascript:divinicio();"><span>Inicio</span></a>                         
 					</li>						                                                     
 					<li>
-					    <a><span>Renda Mensal</span></a>                         
+					    <a href="javascript:divrendas();"><span>Renda Mensal</span></a>                         
 					</li>						                                                     
 					<li>
-					    <a><span>Gastos</span></a>                         
+					    <a href="javascript:divgastos();"><span>Gastos</span></a>                         
 					</li>						                                                                              
 					<li>
-					    <a ><span>Relatorio</span></a>                         
+					    <a href="javascript:divrelatorio();"><span>Relatorio</span></a>                         
 					</li>
 						                                    
 				</ul>
@@ -31,15 +32,9 @@
 
 			<div class="container">
 				<div id="divinicio" >
-					<div class="mesInicio"  >
+					<div class="mesInicio">
 						<p id="mesAtual"></p>
-						<script style="color:red;">	
-
-                          function muda(meses){
-                                            document.getElementById(meses).style.color="red";
-                                          }
-
-
+						<script >			
 							var meses = [
 								  "Janeiro",
 								  "Fevereiro",
@@ -54,19 +49,14 @@
 								  "Novembro",
 								  "Dezembro"
 								];
-
-							
- 
 								
 							function getMesAtual(){
 							    document.getElementById('mesAtual').innerHTML = 'Mês: ' + meses[new Date().getMonth()];
-							   
 							}
 
 							getMesAtual();
-
-							
 						</script>
+
 					</div>
 					<div class="cabecario">
 						<h1>Saldo Mensal Disponivel</h1>
@@ -94,20 +84,21 @@
                             <td  >-R$  <samp class="cgast">0,00</samp></td>
                             
                           </tr>
-						</table></center>
+						</table>
 					</div>
+					
 				</div>
 				
-				<div class="rendas">
+				<div id="divrendas"class="rendas">
 					<div class="cabecario">
 						<h1>Rendas</h1>
 						<hr>
 					</div>
 
 					<div>
-					  	<button id="addrenda" class="btn btn-primary">Adicionar</button>
-					  	<button id="editrenda" class="btn btn-primary">Editar</button>
-						<button id="delrenda" class="btn btn-secondary" >Excluir</button>
+					  	<button id="addrenda" class="btn btn-primary" onclick="divaddrendas()">Adicionar</button>
+					  	<button id="editrenda" class="btn btn-primary" onclick="diveditrendas();">Editar</button>
+						<button id="delrenda" class="btn btn-secondary" onclick="divdelrendas()">Excluir</button>
 					</div>
 					<table id="rendafx" class="tabela" border="2" width="300">
 					    <tr>
@@ -132,16 +123,16 @@
 					</table>	
 				</div><!--Rendas-->
 
-				<div id="gasto" class="gastos">
+				<div id="divgastos" class="gastos">
 					<div class="cabecario">
 						<h1>Gastos</h1>
 						<hr>
 					</div>
 
 					<div>
-					  	<button id="addgasto" class="btn btn-primary">Adicionar</button>
-					  	<button id="editgasto" class="btn btn-primary">Editar</button>
-						<button id="delgasto"class="btn btn-secondary" >Excluir</button>
+					  	<button id="addgasto" class="btn btn-primary" onclick="divaddgastos()">Adicionar</button>
+					  	<button id="editgasto" class="btn btn-primary" onclick="diveditgastos()">Editar</button>
+						<button id="delgasto"class="btn btn-secondary" onclick="divdelgastos()">Excluir</button>
 					</div>
 					<table id="gastofx" class="tabela" border="2" width="300">
 					    <tr>
@@ -170,7 +161,7 @@
 					</table>
 				</div><!--gastos-->
 
-				<div class="relatorio">
+				<div id="divrelatorio" class="relatorio">
 					<div class="cabecario ">
 						<h1>Relátorio</h1>
 						<hr>
@@ -227,27 +218,27 @@
 					</div>
 				</div><!--relatorio-->
 
-				<div class="addrendas">
+				<div id="divaddrendas" class="addrendas">
 					
 					<div class="cabecario bordcabecario">
-						<h1>Adicionar Gastos</h1>
+						<h1>Adicionar Renda</h1>
 					</div>
 					<form class="form">
 						
-						<input type="text" placeholder="Descrição">
-						<input type="number" placeholder="Valor">
+						<input id="descrenda" type="text" placeholder="Descrição">
+						<input id="valorrenda" type="number" placeholder="Valor">
 						<div class="checkbox">
-						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						<input id="checkrenda" type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
 						</div>
 						<div>
-					  		<button class="btn btn-primary">Adicionar</button>
-							<button class="btn btn-secondary" >Cancelar</button>
+					  		<button class="btn btn-primary" onclick="adicionarRenda()">Adicionar</button>
+							<button class="btn btn-secondary" onclick="divrendas()">Cancelar</button>
 						</div>
 					</form>
 						
 				</div><!--addrendas-->
 
-				<div class="editrendas">
+				<div id="diveditrendas" class="editrendas">
 					<div class="cabecario bordcabecario">
 						<h1>Editar Renda</h1>
 						
@@ -263,12 +254,12 @@
 						
 						<div>
 					  		<button class="btn btn-primary">Editar</button>
-							<button class="btn btn-secondary" >Cancelar</button>
+							<button class="btn btn-secondary" onclick="divrendas()">Cancelar</button>
 						</div>
 					</form>
 				</div><!--editrendas-->
 
-				<div class="excluirrendas">
+				<div id="divdelrendas" class="excluirrendas" id=".btnEditar">
 					
 					<div class="cabecario bordcabecario" >
 						<h1>Excluir Renda<iv/h1>
@@ -281,13 +272,13 @@
 						</div>
 						
 						<div>
-					  		<button class="btn btn-primary">Cancelar</button>
-							<button class="btn btn-secondary" >Excluir</button>
+					  		<button class="btn btn-primary" onclick="divrendas()">Cancelar</button>
+							<button class="btn btn-secondary" id=".btnExcluir" >Excluir</button>
 						</div>
 					</form>
 				</div><!--excluirrendas-->
 
-				<div class="addgastos">
+				<div id="divaddgastos" class="addgastos">
 					
 					<div class="cabecario bordcabecario">
 						<h1>Adicionar Gasto</h1>
@@ -305,13 +296,13 @@
 						</div>
 						<div>
 					  		<button class="btn btn-primary">Adicionar</button>
-							<button class="btn btn-secondary" >Cancelar</button>
+							<button class="btn btn-secondary" onclick="divgastos()">Cancelar</button>
 						</div>
 					</form>
 						
 				</div><!--addgastos-->
 				
-				<div class="editgastos">
+				<div id="diveditgastos" class="editgastos" id="#btnAdicionar">
 					<div class="cabecario bordcabecario">
 						<h1>Editar Gasto</h1>
 						
@@ -330,12 +321,12 @@
 						</div>
 						<div>
 					  		<button class="btn btn-primary">Editar</button>
-							<button class="btn btn-secondary" >Cancelar</button>
+							<button class="btn btn-secondary" onclick="divgastos()">Cancelar</button>
 						</div>
 					</form>
 				</div><!--editgastos-->
 
-				<div class="excluirgastos">
+				<div id="divdelgastos" class="excluirgastos">
 					
 					<div class="cabecario bordcabecario">
 						<h1>Excluir Gasto<iv/h1>
@@ -348,7 +339,7 @@
 						<input type="number" placeholder="ID">
 						
 						<div>
-					  		<button class="btn btn-primary">Cancelar</button>
+					  		<button class="btn btn-primary" onclick="gastos()">Cancelar</button>
 							<button class="btn btn-secondary" >Excluir</button>
 						</div>
 					</form>
