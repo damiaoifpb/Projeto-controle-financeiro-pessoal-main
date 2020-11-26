@@ -78,7 +78,7 @@
 			}
 
 			.inicio{
-				display: block;
+				display:block;
 			}
 			.rendas{
 				position: absolute;
@@ -90,8 +90,7 @@
 			}
 			.relatorio{
 				position: absolute;
-				display:none;
-				
+				display: none;
 			}
 			.addrendas{
 				position: absolute;
@@ -189,8 +188,11 @@
 				border-color: white;
 				margin: 15px auto;
 			}
-       
-           .crend{
+			.mesInicio p{
+				color: green;
+				text-align: center;
+			}
+			.crend{
      
 		    color: #008000;
 		     font-size: 18px;
