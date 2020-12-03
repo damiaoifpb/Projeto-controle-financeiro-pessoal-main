@@ -50,3 +50,23 @@ function divdelgastos(){
 		closeall();
 		document.getElementById('divdelgastos').style.display= 'block';	
 }
+function cadRenda(descricao,valor,tipo){
+	if (tipo=="fx") {
+		var tb = document.getElementById("rendafx");
+	}else{
+		var tb = document.getElementById("rendavar"); 
+	}
+	var qtdLinhas = tb.rows.length;
+	var linha = tb.insertRow(qtdLinhas);
+
+	var cellID = linha.insertCell(0);
+	var cellDesc = linha.insertCell(1);
+	var cellValor = linha.insertCell(2);
+
+	cellID.innerHTML = qtdLinhas;
+	cellDesc.innerHTML = descricao;
+	cellValor.innerHTML = valor;
+
+	divrendas();
+
+}
