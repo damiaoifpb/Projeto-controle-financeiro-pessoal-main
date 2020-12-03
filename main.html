@@ -5,8 +5,7 @@
 			<meta charset="utf-8">
 		    </script><title>Controle Financeiro Pessoal</title><link rel="shortcut icon" href="css/imagens/Icon.png" />
 		    <link rel="stylesheet" type="text/css"  href="css/style.css" />
-			<script src="js/javascript.js"></script> <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-			 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+			<script src="js/javascript.js"></script>
      		  
 		</head>
 		<body>
@@ -225,13 +224,13 @@
 					</div>
 					<form class="form">
 						
-						<input id="descrenda" type="text" placeholder="Descrição">
-						<input id="valorrenda" type="number" placeholder="Valor">
+						<input id="descrenda" name="txtDescRenda" type="text" placeholder="Descrição">
+						<input id="valorrenda" name="txtValorRenda" type="number" placeholder="Valor">
 						<div class="checkbox">
-						<input id="checkrenda" type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						<input id="checkrenda" type="radio" name="addtbrenda" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="addtbrenda" value="va"/><p class="formpag">Variável</p>
 						</div>
 						<div>
-					  		<button class="btn btn-primary" onclick="adicionarRenda()">Adicionar</button>
+					  		<button class="btn btn-primary" onclick="cadRenda(txtDescRenda.value, txtValorRenda.value, addtbrenda.value)">Adicionar</button>
 							<button class="btn btn-secondary" onclick="divrendas()">Cancelar</button>
 						</div>
 					</form>
@@ -259,7 +258,7 @@
 					</form>
 				</div><!--editrendas-->
 
-				<div id="divdelrendas" class="excluirrendas" id=".btnEditar">
+				<div id="divdelrendas" class="excluirrendas">
 					
 					<div class="cabecario bordcabecario" >
 						<h1>Excluir Renda<iv/h1>
@@ -273,7 +272,7 @@
 						
 						<div>
 					  		<button class="btn btn-primary" onclick="divrendas()">Cancelar</button>
-							<button class="btn btn-secondary" id=".btnExcluir" >Excluir</button>
+							<button class="btn btn-secondary" >Excluir</button>
 						</div>
 					</form>
 				</div><!--excluirrendas-->
@@ -302,7 +301,7 @@
 						
 				</div><!--addgastos-->
 				
-				<div id="diveditgastos" class="editgastos" id="#btnAdicionar">
+				<div id="diveditgastos" class="editgastos">
 					<div class="cabecario bordcabecario">
 						<h1>Editar Gasto</h1>
 						
