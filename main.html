@@ -227,10 +227,10 @@
 						<input id="descrenda" name="txtDescRenda" type="text" placeholder="Descrição">
 						<input id="valorrenda" name="txtValorRenda" type="number" placeholder="Valor">
 						<div class="checkbox">
-						<input id="checkrenda" type="radio" name="addtbrenda" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="addtbrenda" value="va"/><p class="formpag">Variável</p>
+						<input id="checkrenda" type="radio" name="addtbrenda" value="fx"/><p class="formpag">Fixo</p><input id="checkrenda2" type="radio" name="addtbrenda" value="va"/><p class="formpag">Variável</p>
 						</div>
 						<div>
-					  		<button class="btn btn-primary" onclick="cadRenda(txtDescRenda.value, txtValorRenda.value, addtbrenda.value)">Adicionar</button>
+					  		<button class="btn btn-primary" onclick="cadRenda(txtDescRenda.value, txtValorRenda.value, addtbrenda.value)" onclick="cadPessoa(txtDescRenda.value, txtValorRenda.value)">Adicionar</button >
 							<button class="btn btn-secondary" onclick="divrendas()">Cancelar</button>
 						</div>
 					</form>
@@ -284,14 +284,14 @@
 					</div>
 					<form class="form">
 						
-						<input type="text" placeholder="Descrição">
-						<input type="number" placeholder="Valor">
-						<input type="number" placeholder="Parcelas">
+						<input id="desgastos" type="text" placeholder="Descrição">
+						<input  id="valor" type="number" placeholder="Valor">
+						<input  id="parcelas" type="number" placeholder="Parcelas">
 						<div class="checkbox">
-						<input type="radio" name="fm" value="av"/><p class="formpag">Avista</p><input type="radio" name="fm" value="ac"/><p class="formpag">Cartão</p>
+						<input id="c1" type="radio" name="fm" value="av"/><p class="formpag">Avista</p><input id="c2" type="radio" name="fm" value="ac"/><p class="formpag">Cartão</p>
 						</div>
 						<div class="checkbox">
-						<input type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
+						<input id="c3" type="radio" name="tb" value="fx"/><p class="formpag">Fixo</p><input id="c4" type="radio" name="tb" value="va"/><p class="formpag">Variável</p>
 						</div>
 						<div>
 					  		<button class="btn btn-primary">Adicionar</button>
