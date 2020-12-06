@@ -1,6 +1,6 @@
 var pessoas, index;
 
-function cadPessoa(nome, sobrenome, email, sexo, profissao) {
+function cadPessoa(nome, sobrenome, email, sexo) {
     pessoas = document.getElementById("tbPessoas");    
     var qtdlLinhas = pessoas.rows.length;
     var linha = pessoas.insertRow(qtdlLinhas);

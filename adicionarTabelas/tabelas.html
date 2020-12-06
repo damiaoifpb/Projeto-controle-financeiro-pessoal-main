@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Educação Virtual</title>
+    <title>AdicionarTabelas</title>
     <link rel="stylesheet" href="Pessoas.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,52 +24,43 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="lh-100">
-            <h6 class="mb-0 text-white lh-100">Educação Virtual</h6>
-            <small class="text-white">Inovação no Ensino e na Vida</small>
-        </div>
-    </nav>
-
+    
     <div id="fPessoas">
         <form>
             <div class="form-group">
-                <label for="txtCodigo">Código</label>
-                <input type="text" class="form-control" id="txtCodigo" aria-describedby="emailHelp" placeholder="Código" readonly>
+                <label for="txtCodigo">id</label>
+                <input type="text" class="form-control" id="txtCodigo" aria-describedby="emailHelp" placeholder="id" readonly>
             </div>
             <div class="form-group">
-                <label for="txtNome">Nome</label>
-                <input type="text" class="form-control" id="txtNome" aria-describedby="emailHelp" placeholder="Nome">
+                <label for="txtNome">Descrição</label>
+                <input type="text" class="form-control" id="txtNome" aria-describedby="emailHelp" placeholder="Descrição">
             </div>
             <div class="form-group">
-                <label for="txtSobrenome">Sobrenome</label>
-                <input type="text" class="form-control" id="txtSobrenome" placeholder="Sobrenome">
+                <label for="txtSobrenome">valor</label>
+                <input type="text" class="form-control" id="txtSobrenome" placeholder="valor">
             </div>
-            <label for="validationCustomUsername">E-mail</label>
+            <label for="validationCustomUsername">Parcelas</label>
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    
                 </div>
-                <input type="text" class="form-control" id="txtEmail" placeholder="E-mail"
+                <input type="text" class="form-control" id="txtEmail" placeholder="Parcelas"
                        aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                     Por favor, informe um e-mail válido.
                 </div>
             </div>
             <div class="form-group">
-                <label for="slSexo">Sexo</label>
+                <label for="slSexo">Forma de pagamento</label>
                 <select id="slSexo" class="form-control">
                     AZ10
-                    <option value="Masculino" selected>Masculino</option>
-                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino" selected>Avista</option>
+                    <option value="Feminino">Parcelado</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="txtProfissao">Profissão</label>
-                <input type="text" class="form-control" id="txtProfissao" placeholder="Profissão">
-            </div>
+            
             <button type="button" class="btn btn-primary btn-lg"
-                    onclick="cadPessoa(txtNome.value, txtSobrenome.value, txtEmail.value, slSexo.value, txtProfissao.value)">
+                    onclick="cadPessoa(txtNome.value, txtSobrenome.value, txtEmail.value, slSexo.value)">
                 Inserir
             </button>
             <button type="button" class="btn btn-primary btn-lg"
@@ -88,15 +79,15 @@
 
     <div id="dGridPessoas">
 
-        <table id="tbPessoas" class="table table-striped">
+        <table id="tbPessoas" class="table table-striped" width: 85%  height: 500px;>
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Sobrenome</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Sexo</th>
-                    <th scope="col">Profissão</th>
+                    <th scope="col">id</th>
+                    <th scope="col">descrição</th>
+                    <th scope="col">valor</th>
+                    <th scope="col">Parcelas</th>
+                    <th scope="col">Forma de Pagamento</th>
+                    
                 </tr>
             </thead>
         </table>
